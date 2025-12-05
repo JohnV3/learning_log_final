@@ -1,0 +1,10 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+<h2>Add New Entry for "{{ topic.text }}"</h2>
+<form method="post" class="mt-3">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary" type="submit">Save Entry</button>
+</form>
+{% endblock %}

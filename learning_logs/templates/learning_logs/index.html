@@ -1,0 +1,16 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <h2>Welcome to Learning Log!</h2>
+    <p class="lead">A place to track your learning topics and entries.</p>
+    {% if not user.is_authenticated %}
+        <a class="btn btn-primary btn-lg" href="{% url 'learning_logs:register' %}">Register</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'learning_logs:login' %}">Login</a>
+    {% else %}
+        <a class="btn btn-primary btn-lg" href="{% url 'learning_logs:topics' %}">View Your Topics</a>
+    {% endif %}
+</div>
+{% endblock %}
+
+
